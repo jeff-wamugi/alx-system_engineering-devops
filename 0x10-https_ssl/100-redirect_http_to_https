@@ -34,13 +34,13 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 frontend web_frontend
     bind *:80
-    bind *:443 ssl crt /etc/letsencrypt/live/www.otungp.tech/fullchain.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.jeffwamugi.tech/fullchain.pem
     mode http
     default_backend web_backend
 
 backend web_backend
     balance roundrobin
     redirect scheme https if !{ ssl_fc }
-    server 19470-web-01 34.239.163.194:80 check
-    server 19470-web-02 3.85.222.35:80 check
+    server 117930-web-01 18.233.62.82:80 check
+    server 117930-web-02 107.22.146.46:80 check
 
